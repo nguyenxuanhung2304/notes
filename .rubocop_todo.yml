@@ -11,8 +11,7 @@
 # Configuration parameters: TreatCommentsAsGroupSeparators, ConsiderPunctuation, Include.
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
 Bundler/OrderedGems:
-  Exclude:
-    - 'Gemfile'
+  Enabled: true
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).

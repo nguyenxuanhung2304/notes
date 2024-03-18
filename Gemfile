@@ -58,6 +58,9 @@ group :development, :test do
   gem 'rubocop', '~> 1.62', require: false
   gem 'lograge'
   gem 'faker'
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-capybara', require: false
 end
 
 group :development do
