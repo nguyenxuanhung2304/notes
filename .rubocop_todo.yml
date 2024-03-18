@@ -135,7 +135,7 @@ Style/SpecialGlobalVars:
 # Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
