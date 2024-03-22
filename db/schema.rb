@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_22_034654) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_22_044025) do
   create_table "directories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_directories_on_user_id"
+  end
+
+  create_table "notes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "directory_id", null: false
+    t.string "name", null: false
+    t.string "title", null: false
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["directory_id"], name: "index_notes_on_directory_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -38,4 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_034654) do
   end
 
   add_foreign_key "directories", "users"
+  add_foreign_key "notes", "directories"
+  add_foreign_key "notes", "users"
 end

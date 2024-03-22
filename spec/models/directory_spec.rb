@@ -21,6 +21,7 @@ require 'rails_helper'
 RSpec.describe Directory do
   describe 'Associations' do
     it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_many(:notes).dependent(:destroy) }
   end
 
   describe 'Validations' do

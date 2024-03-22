@@ -28,6 +28,7 @@ class User < ApplicationRecord
          :confirmable
 
   has_many :directories, dependent: :destroy
+  has_many :notes, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :phone_number, presence: true, length: { maximum: 255 }
