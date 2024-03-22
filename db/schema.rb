@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_03_22_044025) do
   create_table "directories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
