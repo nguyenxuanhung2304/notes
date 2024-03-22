@@ -24,6 +24,7 @@
 class Note < ApplicationRecord
   belongs_to :user
   belongs_to :directory
+  has_one :alert, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :title, presence: true, length: { maximum: 255 }

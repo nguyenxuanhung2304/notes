@@ -27,6 +27,7 @@ RSpec.describe Note do
   describe 'Associations' do
     it { is_expected.to belong_to(:user) }
     it { is_expected.to belong_to(:directory) }
+    it { is_expected.to have_one(:alert).dependent(:destroy) }
   end
 
   describe 'Validations' do

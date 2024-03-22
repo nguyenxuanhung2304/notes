@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_22_044025) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_22_064743) do
+  create_table "alerts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "note_id", null: false
+    t.datetime "notification_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["note_id"], name: "index_alerts_on_note_id"
+  end
+
   create_table "directories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name", null: false
@@ -49,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_044025) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "alerts", "notes"
   add_foreign_key "directories", "users"
   add_foreign_key "notes", "directories"
   add_foreign_key "notes", "users"
