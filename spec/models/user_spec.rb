@@ -26,7 +26,8 @@ require 'rails_helper'
 
 RSpec.describe User do
   describe 'Associations' do
-    it { is_expected.to have_many(:directories) }
+    it { is_expected.to have_many(:directories).dependent(:destroy) }
+    it { is_expected.to have_many(:notes).dependent(:destroy) }
   end
 
   describe 'Validations' do
