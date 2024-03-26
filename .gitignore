@@ -32,3 +32,6 @@
 
 # dotenv
 .env
+
+# RubyMine
+.idea/*
