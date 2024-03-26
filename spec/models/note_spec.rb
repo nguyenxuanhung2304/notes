@@ -8,7 +8,7 @@
 #  title        :string(255)      not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  directory_id :bigint           not null
+#  directory_id :bigint
 #  user_id      :bigint           not null
 #
 # Indexes
