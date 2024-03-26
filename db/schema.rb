@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_064743) do
 
   create_table "notes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "directory_id", null: false
+    t.bigint "directory_id"
     t.string "name", null: false
     t.string "title", null: false
     t.text "content", null: false
