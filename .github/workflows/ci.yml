@@ -1,0 +1,30 @@
+name: Run ci
+on:
+  pull_request:
+    paths:
+      - '**/*.rb'
+      - '*.rb'
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    services:
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Get bundle dependencies
+        run: |
+          bundle install
+
+      - name: Run rubocop
+        run: |
+          bundle exec rubocop
+
+      - name: Run rspec
+        run: |
+          bundle exec rspec
